@@ -1,48 +1,34 @@
 import React from 'react';
-import './About.css';
+import '../Styles/style.css';
+import anandImage from "../Assets/anand.jpg";
+
 
 function About() {
-  const skills = [
-    'Java',
-    'React',
-    'JavaScript',
-    'HTML & CSS',
-    'SQL',
-    'Hibernate with JPA',
-    'Postman',
-    'Git & GitHub',
-    
-
-  ];
+  
 
   return (
-    <section id="about" className="about">
-      <div className="about-container">
-        <h2 className="about-title">About Me</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-              I'm a passionate developer with experience in building web applications.
-              I love creating user-friendly interfaces and solving complex problems.
-            </p>
-            <p>
-              With a strong foundation in modern web technologies, I strive to create
-              applications that are not only functional but also beautiful and intuitive.
-            </p>
-          </div>
-          <div className="about-skills">
-            <h3>Skills & Technologies</h3>
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  {skill}
-                </div>
-              ))}
+   <>
+    <section class="about" id="about">
+        <div class="content">
+            <div class="title">
+                <span>About Me</span>
+
             </div>
-          </div>
+            <div class="about-details">
+                <div class="right">
+                   <img src={anandImage} alt="Anand" />
+                </div>
+                <div class="left">
+                    <div class="topic">Development Is My Passion</div>
+                    <p>I am a passionate developer, driven by curiosity and creativity. I thrive on solving complex problems, building meaningful applications, and learning continuously. Technology excites me, innovation inspires me, and collaboration empowers me.</p>
+                     <div class="button">
+                <button>Hire me</button>
+            </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
+   </>
   );
 }
 

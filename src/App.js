@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Projects from "./components/Projects";
+import Services from "./components/Services";
 import Contact from "./components/Contact";
-
+import Skills from './components/Skills';
+import Footer from './components/Footer';
 import "./App.css";
 
 function App() {
@@ -17,9 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+         <Route path="/skill" element={<Skills />} />
+        <Route path="/service" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
