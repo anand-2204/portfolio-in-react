@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './Header.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,25 +9,41 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
+    <>
     <header className="header">
       <div className="header-container">
         <h1 className="logo">Portfolio</h1>
-        
+
         <button className="menu-toggle" onClick={toggleMenu}>
           ☰
         </button>
 
-        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-          
+        <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
+          <Link to="/" className="nav-link" onClick={closeMenu}>
+            Home
+          </Link>
 
-          <a href="#home" className="nav-link" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#about" className="nav-link" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</a>
+          <Link to="/about" className="nav-link" onClick={closeMenu}>
+            About
+          </Link>
+
+          <Link to="/projects" className="nav-link" onClick={closeMenu}>
+            Projects
+          </Link>
+
+          <Link to="/contact" className="nav-link" onClick={closeMenu}>
+            Contact
+          </Link>
         </nav>
       </div>
+
     </header>
+</>
   );
 }
 
